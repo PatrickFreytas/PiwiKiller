@@ -40,26 +40,40 @@ assets/
     brand/          Logos e imágenes de marca usados dentro de la app
 src/
   app/              RUTAS. Cada archivo es una pantalla; solo reexporta desde features/
-    _layout.tsx     Layout raíz: tema + barra de pestañas
-    index.tsx       Pestaña "Inicio"
-    settings.tsx    Pestaña "Ajustes"
+    _layout.tsx     Layout raíz: fuente Inter, tema y pila de pantallas
+    (tabs)/         Pestañas: index (Inicio), buscar, pedidos, puntos, perfil
+    local.tsx, producto.tsx, carrito.tsx, seguimiento.tsx, mototaxi.tsx
+    iniciar-sesion.tsx, registro.tsx, verificar.tsx
   features/         FUNCIONALIDADES. Una carpeta por cada área de la app
-    home/
+    home/           Inicio (lee el catálogo de Supabase)
+    restaurant/     Restaurante y menú
+    product/        Personalizar producto
+    cart/           Carrito y pago
+    tracking/       Seguimiento en vivo
+    orders/         Mis pedidos
+    rewards/        Tude Puntos
+    rides/          Mototaxi y envíos
+    auth/           Iniciar sesión, registro y verificación
+    search/, profile/   Pestañas sin diseño propio todavía
       screens/      Pantallas completas de la funcionalidad
+      components/   Componentes que solo usa esa funcionalidad
+      data.ts       Datos de ejemplo del Figma, mientras no lea de Supabase
       index.ts      Lo que la funcionalidad expone al resto de la app
-    settings/
-      components/   Componentes que solo usa esta funcionalidad
-      screens/
-      index.ts
   components/       COMPONENTES COMPARTIDOS entre funcionalidades
-    ui/             Piezas básicas: texto, vistas, enlaces, colapsables
-    layout/         Estructura de pantalla (Screen)
+    ui/
+      actions/      Button, Chip, IconButton, QuantityStepper
+      forms/        TextField, Checkbox, Radio, PhonePrefix
+      display/      Pill, FoodThumb, Icon, Divider, SectionHeader, MapPlaceholder
+      surfaces/     Card, ThemedView
+      text/         ThemedText
+      index.ts      Punto único de importación: `@/components/ui`
+    layout/         Screen (base de toda pantalla), Hero (cabecera a sangre), Sheet (panel)
     navigation/     Barra de pestañas (nativa y web)
     feedback/       Splash animado; aquí irán loaders, toasts, etc.
   lib/              Clientes y tipos de servicios compartidos (Supabase)
-  hooks/            Hooks reutilizables (tema, esquema de color)
-  theme/            Colores, espaciado y tipografías
-  config/           Configuración y constantes globales de la app
+  hooks/            Hooks reutilizables (tema, volver atrás)
+  theme/            Tokens: colores, tipografía, espaciado, radios, sombras, degradados
+  config/           Constantes globales y datos de ejemplo compartidos (demo.ts)
 supabase/
   migrations/       Cambios versionados del esquema PostgreSQL
   seed.sql          Datos ficticios de demostración
@@ -81,4 +95,4 @@ supabase/
    ```ts
    export { NombreScreen as default } from '@/features/<nombre>';
    ```
-3. Si debe aparecer como pestaña, añádela en `src/components/navigation/app-tabs.tsx` y `app-tabs.web.tsx`.
+3. Si debe aparecer como pestaña, pon la ruta en `src/app/(tabs)/` y añádela en `src/components/navigation/app-tabs.tsx` y `app-tabs.web.tsx`.
