@@ -9,7 +9,9 @@ export function HomeScreen() {
   return (
     <Screen>
       <ThemedView style={styles.header}>
-        <ThemedText type="subtitle">{AppConfig.name}</ThemedText>
+        <ThemedText type="subtitle" className="text-coral">
+          {AppConfig.name}
+        </ThemedText>
         <ThemedText themeColor="textSecondary">Delivery en Pucallpa. La base de la app está lista.</ThemedText>
       </ThemedView>
 
