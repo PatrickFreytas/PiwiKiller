@@ -7,12 +7,25 @@ import { Inter_800ExtraBold } from '@expo-google-fonts/inter/800ExtraBold';
 import { Inter_900Black } from '@expo-google-fonts/inter/900Black';
 import { useFonts } from 'expo-font';
 import { DefaultTheme, ThemeProvider } from 'expo-router';
+import { Stack } from 'expo-router/stack';
 import * as SplashScreen from 'expo-splash-screen';
 
 import { AnimatedSplashOverlay } from '@/components/feedback/animated-splash-overlay';
-import AppTabs from '@/components/navigation/app-tabs';
+import { Colors } from '@/theme';
 
 SplashScreen.preventAutoHideAsync();
+
+const NavigationTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: Colors.light.primary,
+    background: Colors.light.background,
+    card: Colors.light.backgroundElement,
+    text: Colors.light.text,
+    border: Colors.light.border,
+  },
+};
 
 export default function RootLayout() {
   // Los nombres de las claves son los que usa `FontFamily` en `@/theme`.
@@ -30,9 +43,10 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={DefaultTheme}>
+    <ThemeProvider value={NavigationTheme}>
       <AnimatedSplashOverlay />
-      <AppTabs />
+      {/* Las pestañas viven en (tabs); el resto de pantallas se apilan encima, sin cabecera nativa. */}
+      <Stack screenOptions={{ headerShown: false }} />
     </ThemeProvider>
   );
 }
