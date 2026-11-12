@@ -23,6 +23,12 @@ HU-01 — Base del proyecto (rama hu-01-base)
 ## Siguiente paso exacto
 Confirmar con el usuario que la app abrió en Expo Go y que la PR de HU-01 se fusionó. Luego empezar HU-02: crear la rama `hu-02-tokens-componentes` desde `main`, pedir el enlace del Figma "proyecto-ruta", pasar los colores de Tude a `src/theme/colors.ts` (hoy tiene la paleta gris/azul de la plantilla) y cargar la fuente Inter en `src/app/_layout.tsx`.
 
+## Estado al cortar la sesión (2026-11-12, límite de uso)
+- Se creó la rama `hu-02-tokens-componentes` (sale de `hu-01-base`, porque la PR de HU-01 aún no se fusiona). Todavía no tiene código de HU-02.
+- Figma: https://www.figma.com/design/uCivAoQFO20GMMhaqxsZka/proyecto-ruta?node-id=0-1 — la guía de estilo es la capa "01 · Guía de estilo TUDE" dentro de "TUDE · App delivery".
+- El conector de Figma (MCP) devolvió "límite de llamadas del plan Starter": no se pudo leer el diseño por ahí. Alternativa: abrir el Figma en Chrome y mirar la capa, o que el usuario exporte esa capa como PNG.
+- Próximo paso de HU-02: leer la guía de estilo, pasar tokens a `src/theme/` y `tailwind.config.js`, cargar Inter y crear botón, chip, pill, input, tarjeta y barra inferior en `src/components/ui/`.
+
 ## Problemas abiertos
 - `gh` (GitHub CLI) no está instalado en esta PC: las PR se abren desde la web de GitHub, o se instala `gh`.
 - El archivo `LICENSE` es el de la plantilla de Expo (MIT a nombre de Expo); decidir si se reemplaza o se quita.
