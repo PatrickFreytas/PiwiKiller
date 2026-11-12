@@ -3,19 +3,17 @@ import { StyleSheet, View } from 'react-native';
 import { ThemedText } from '@/components/ui';
 import { Spacing } from '@/theme';
 
-type SettingsRowProps = {
+type ProfileRowProps = {
   label: string;
   value: string;
 };
 
 /** Fila de solo lectura: etiqueta a la izquierda, valor a la derecha. */
-export function SettingsRow({ label, value }: SettingsRowProps) {
+export function ProfileRow({ label, value }: ProfileRowProps) {
   return (
     <View style={styles.row}>
-      <ThemedText type="small">{label}</ThemedText>
-      <ThemedText type="small" themeColor="textSecondary">
-        {value}
-      </ThemedText>
+      <ThemedText>{label}</ThemedText>
+      <ThemedText themeColor="textSecondary">{value}</ThemedText>
     </View>
   );
 }
