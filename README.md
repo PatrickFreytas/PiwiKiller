@@ -22,6 +22,15 @@ npm run lint       # revisa el estilo del código
 npx tsc --noEmit   # revisa los tipos
 ```
 
+## Configurar Supabase
+
+1. Crea un proyecto en Supabase.
+2. Ejecuta `supabase/migrations/20261112124000_create_tude_schema.sql` en el SQL Editor y luego `supabase/seed.sql`. Para desarrollo local con Supabase CLI y Docker, `supabase start` aplica las migraciones y la semilla; `supabase db reset` las vuelve a aplicar.
+3. Copia `.env.example` a `.env` y completa `EXPO_PUBLIC_SUPABASE_URL` y `EXPO_PUBLIC_SUPABASE_ANON_KEY` con los datos del proyecto. Usa la clave pública/anon, nunca la `service_role`.
+4. Reinicia Expo con `npm start`. La pantalla Inicio muestra el catálogo cargado desde Supabase.
+
+Los seis locales y veinte productos de `seed.sql` son datos ficticios de demostración, no comercios ni precios verificados.
+
 ## Estructura del proyecto
 
 ```
@@ -47,9 +56,13 @@ src/
     layout/         Estructura de pantalla (Screen)
     navigation/     Barra de pestañas (nativa y web)
     feedback/       Splash animado; aquí irán loaders, toasts, etc.
+  lib/              Clientes y tipos de servicios compartidos (Supabase)
   hooks/            Hooks reutilizables (tema, esquema de color)
   theme/            Colores, espaciado y tipografías
   config/           Configuración y constantes globales de la app
+supabase/
+  migrations/       Cambios versionados del esquema PostgreSQL
+  seed.sql          Datos ficticios de demostración
 ```
 
 ## Reglas de organización

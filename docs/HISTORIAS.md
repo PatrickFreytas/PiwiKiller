@@ -6,9 +6,9 @@ Estados: Pendiente · En curso · Hecho. Solo una HU puede estar "En curso" a la
 
 | HU | Qué se construye | Terminado cuando | Estado |
 | --- | --- | --- | --- |
-| HU-01 | Proyecto Expo, repo en GitHub, CLAUDE.md, PROGRESO.md, HISTORIAS.md | La app abre en Expo Go y el repo tiene los 3 archivos | En curso |
+| HU-01 | Proyecto Expo, repo en GitHub, CLAUDE.md, PROGRESO.md, HISTORIAS.md | La app abre en Expo Go y el repo tiene los 3 archivos | Pendiente |
 | HU-02 | Tokens de Tude y componentes: botón, chip, pill, input, tarjeta, barra inferior | Una pantalla de muestra se ve igual que la guía de estilo del Figma | Pendiente |
-| HU-03 | Supabase: tablas de usuarios, locales, categorías, productos, opciones, pedidos, puntos + datos de prueba | 6 locales y 20 productos cargados y leídos desde la app | Pendiente |
+| HU-03 | Supabase: tablas de usuarios, locales, categorías, productos, opciones, pedidos, puntos + datos de prueba | 6 locales y 20 productos cargados y leídos desde la app | Hecho |
 
 ## Fase 1 · Cuenta (semana 2)
 
