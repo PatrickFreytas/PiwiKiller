@@ -55,7 +55,7 @@ Son 20 historias en 6 fases, en el orden en que se construyen: cada una deja alg
 | --- | --- | --- | --- | --- |
 | HU-01 | 0 · Base | Proyecto Expo, repo en GitHub, CLAUDE.md, PROGRESO.md, HISTORIAS.md | La app abre en Expo Go y el repo tiene los 3 archivos | Pendiente |
 | HU-02 | 0 · Base | Tokens de Tude y componentes: botón, chip, pill, input, tarjeta, barra inferior | Una pantalla de muestra se ve igual que la guía de estilo del Figma | Pendiente |
-| HU-03 | 0 · Base | Supabase: tablas de usuarios, locales, categorías, productos, opciones, pedidos, puntos + datos de prueba | 6 locales y 20 productos cargados y leídos desde la app | Pendiente |
+| HU-03 | 0 · Base | Supabase: tablas de usuarios, locales, categorías, productos, opciones, pedidos, puntos + datos de prueba | 6 locales y 20 productos cargados y leídos desde la app | Hecho |
 | HU-04 | 1 · Cuenta | Registro: nombre, apellido, celular, correo opcional, contraseña, código de amigo | El usuario queda creado en Supabase, sin pedir DNI | Pendiente |
 | HU-05 | 1 · Cuenta | Verificar celular con código (OTP) | Código válido entra; inválido muestra error; reenvío a los 30 s | Pendiente |
 | HU-06 | 1 · Cuenta | Iniciar sesión, recordarme y cerrar sesión | Al reabrir la app sigue con la sesión iniciada | Pendiente |

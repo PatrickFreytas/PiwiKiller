@@ -3,7 +3,7 @@
 Última actualización: 2026-11-12
 
 ## HU en curso
-HU-03 — Supabase y datos de prueba (rama `hu-03-supabase`)
+Ninguna. HU-03 — Supabase y datos de prueba quedó terminada en la rama `hu-03-supabase` (PR #3, pendiente de fusión).
 
 ## Hecho en esta HU
 - Se creó `supabase/migrations/20261112124000_create_tude_schema.sql` con las tablas para usuarios, locales, categorías, productos y opciones, además de pedidos, sus detalles y puntos.
@@ -14,19 +14,22 @@ HU-03 — Supabase y datos de prueba (rama `hu-03-supabase`)
 - Se corrigió el hook de hidratación web para evitar actualizaciones de estado dentro de efectos.
 - Verificado localmente: `npx tsc --noEmit`, `npm run lint` y `npx expo export --platform android`.
 - Se añadió `.sonarcloud.properties` para que SonarQube Cloud no cuente como duplicación las filas de `supabase/seed.sql` (el Quality Gate de la PR #3 fallaba con 4.1 % por ese archivo).
+- Se creó en Supabase la organización "Tude" (plan Free) y el proyecto "tude" (región São Paulo, ref `fgcbvndcykqlnqoohhus`); se aplicaron la migración y `seed.sql` desde el SQL Editor.
+- Se creó el `.env` local (no se sube) con la URL y la clave publicable del proyecto.
+- Verificado contra el proyecto real: la API devuelve 6 locales, 20 productos, 7 categorías, 3 grupos de opciones y 6 opciones; con la clave pública no se puede insertar ni leer usuarios, pedidos o puntos.
+- Verificado en la app (versión web, `expo start --web`): Inicio muestra "6 locales · 20 productos" con sus datos.
+- El Quality Gate de SonarQube Cloud pasa en la PR #3.
 
 ## Falta
-- [ ] Confirmar que el Quality Gate de SonarQube Cloud pasa en la PR #3 tras el último push.
-- [ ] Aplicar la migración y `seed.sql` en un proyecto Supabase.
-- [ ] Configurar `.env` local con la URL y la clave pública/anon del proyecto.
-- [ ] Verificar en Expo Go que Inicio lee los 6 locales y 20 productos.
-- [ ] Revisar y fusionar la PR de esta HU.
+- [ ] Revisar y fusionar la PR #3.
+- [ ] Opcional: abrir la app en Expo Go en un teléfono; la lectura se comprobó solo en web.
 
 ## Siguiente paso exacto
-Crear o elegir el proyecto Supabase, ejecutar la migración y los datos de prueba según README.md, y después configurar `.env` para probar la lectura desde Inicio.
+Fusionar la PR #3 en `main`. Después, crear la rama de HU-02 (tokens y componentes), que sigue sin implementación, y marcarla "En curso".
 
 ## Problemas abiertos
-- No hay credenciales de un proyecto Supabase en este entorno ni sesión iniciada en el panel de Supabase; el acceso real a la base todavía no se puede validar. El usuario debe crear el proyecto y pasar la URL y la clave anon.
+- La contraseña de la base de datos la generó Supabase y no se guardó; si se necesita (CLI, conexión directa), se restablece en Database → Settings del proyecto.
+- En web (modo desarrollo) aparece el aviso "Cannot manually set color scheme, as dark mode is type 'media'" de NativeWind (`react-native-css-interop`); no impide cargar el catálogo. Revisarlo en HU-02 junto con los tokens.
 - Las PR #1 (HU-01) y #2 (HU-02) ya están fusionadas en `main`, pero siguen como "Pendiente" en HISTORIAS.md y en el plan. La PR #2 solo contenía actualización de progreso: HU-02 aún no tiene implementación; su Figma es https://www.figma.com/design/uCivAoQFO20GMMhaqxsZka/proyecto-ruta?node-id=0-1.
 - El ícono, el splash y el logo siguen siendo los de Expo; se cambian en HU-20.
 - NativeWind 4.2.7 declara soporte hasta Expo SDK 57 y el proyecto usa SDK 58: empaqueta bien, pero falta probarlo en un dispositivo.
