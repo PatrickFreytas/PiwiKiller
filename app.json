@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/images/app/icon.png",
     "scheme": "tude",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "ios": {
       "icon": "./assets/expo.icon"
     },

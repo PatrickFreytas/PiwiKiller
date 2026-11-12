@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useTheme } from '@/hooks/use-theme';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/theme';
+import { BottomTabInset, MaxContentWidth, ScreenMargin, Spacing } from '@/theme';
 
 type ScreenProps = PropsWithChildren<{
   /** Si es `false`, el contenido no hace scroll. */
@@ -21,8 +21,8 @@ export function Screen({ children, scrollable = true }: ScreenProps) {
   const padding = {
     paddingTop: insets.top + Spacing.four,
     paddingBottom: insets.bottom + BottomTabInset + Spacing.three,
-    paddingLeft: insets.left + Spacing.four,
-    paddingRight: insets.right + Spacing.four,
+    paddingLeft: insets.left + ScreenMargin,
+    paddingRight: insets.right + ScreenMargin,
   };
 
   if (!scrollable) {

@@ -62,7 +62,7 @@ export function HomeScreen() {
   return (
     <Screen>
       <ThemedView style={styles.header}>
-        <ThemedText type="subtitle" className="text-coral">
+        <ThemedText type="heading" themeColor="primary">
           {AppConfig.name}
         </ThemedText>
         <ThemedText themeColor="textSecondary">
@@ -98,7 +98,7 @@ export function HomeScreen() {
           </ThemedView>
 
           <View style={styles.section}>
-            <ThemedText type="subtitle">Locales</ThemedText>
+            <ThemedText type="section">Locales</ThemedText>
             {catalog.locales.map((local) => (
               <ThemedView key={local.id} type="backgroundElement" style={styles.item}>
                 <ThemedText type="smallBold">{local.nombre}</ThemedText>
@@ -111,7 +111,7 @@ export function HomeScreen() {
           </View>
 
           <View style={styles.section}>
-            <ThemedText type="subtitle">Productos</ThemedText>
+            <ThemedText type="section">Productos</ThemedText>
             {catalog.productos.map((producto) => (
               <ThemedView key={producto.id} type="backgroundElement" style={styles.item}>
                 <ThemedText type="smallBold">{producto.nombre}</ThemedText>
