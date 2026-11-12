@@ -11,7 +11,8 @@ HU-03 — Supabase y datos de prueba (rama `hu-03-supabase`)
 - Se creó `supabase/seed.sql` con 6 locales ficticios, 20 productos y opciones configurables de demostración.
 - Se añadió el cliente de Supabase y la pantalla Inicio consulta y muestra locales y productos reales del backend.
 - Se documentó la configuración en README.md.
-- Verificado localmente: `npx tsc --noEmit`, ESLint sobre los archivos de esta HU y `npx expo export --platform android`.
+- Se corrigió el hook de hidratación web para evitar actualizaciones de estado dentro de efectos.
+- Verificado localmente: `npx tsc --noEmit`, `npm run lint` y `npx expo export --platform android`.
 
 ## Falta
 - [ ] Aplicar la migración y `seed.sql` en un proyecto Supabase.
@@ -28,7 +29,6 @@ Crear o elegir el proyecto Supabase, ejecutar la migración y los datos de prueb
 - La PR de HU-01 todavía espera revisión/fusión del usuario. HU-02 aún no tiene implementación; su Figma es https://www.figma.com/design/uCivAoQFO20GMMhaqxsZka/proyecto-ruta?node-id=0-1.
 - El ícono, el splash y el logo siguen siendo los de Expo; se cambian en HU-20.
 - NativeWind 4.2.7 declara soporte hasta Expo SDK 57 y el proyecto usa SDK 58: empaqueta bien, pero falta probarlo en un dispositivo.
-- `npm run lint` ahora detecta una infracción preexistente en `src/hooks/use-color-scheme.web.ts`; los archivos de esta HU pasan ESLint directamente.
 - `gh` no está instalado; las PR se abren desde GitHub web. El archivo `LICENSE` sigue siendo el de la plantilla Expo y requiere decisión.
 
 ## Decisiones tomadas
