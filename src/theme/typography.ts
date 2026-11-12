@@ -40,6 +40,8 @@ export const Typography = {
   display: { fontFamily: FontFamily.extraBold, fontSize: 32, lineHeight: 39, letterSpacing: -0.8 },
   /** Saludo y títulos de pantalla: 26 / ExtraBold. */
   heading: { fontFamily: FontFamily.extraBold, fontSize: 26, lineHeight: 31, letterSpacing: -0.6 },
+  /** Título de formulario o de producto: 24 / ExtraBold. */
+  headline: { fontFamily: FontFamily.extraBold, fontSize: 24, lineHeight: 29, letterSpacing: -0.6 },
   /** Título 22 / ExtraBold. */
   title: { fontFamily: FontFamily.extraBold, fontSize: 22, lineHeight: 26 },
   /** Encabezado de sección ("Categorías", "Cerca de ti"): 19 / ExtraBold. */
@@ -48,8 +50,16 @@ export const Typography = {
   subtitle: { fontFamily: FontFamily.bold, fontSize: 16, lineHeight: 20 },
   /** Cuerpo 14 / Regular: descripción de platos y ayudas. */
   body: { fontFamily: FontFamily.regular, fontSize: 14, lineHeight: 17 },
+  /** Cuerpo destacado: 14 / Bold. */
+  bodyBold: { fontFamily: FontFamily.bold, fontSize: 14, lineHeight: 17 },
+  /** Filas de lista y direcciones: 15 / Bold. */
+  callout: { fontFamily: FontFamily.bold, fontSize: 15, lineHeight: 19 },
+  /** Texto de apoyo: 13 / Regular. */
+  note: { fontFamily: FontFamily.regular, fontSize: 13, lineHeight: 16 },
   /** Caption 12 / Regular: metadatos, distancia, tiempo. */
   caption: { fontFamily: FontFamily.regular, fontSize: 12, lineHeight: 15 },
+  /** Caption destacado: 12 / Bold. */
+  captionBold: { fontFamily: FontFamily.bold, fontSize: 12, lineHeight: 15 },
   /** Etiquetas de campos y enlaces cortos: 13 / Bold. */
   label: { fontFamily: FontFamily.bold, fontSize: 13, lineHeight: 16 },
   /** Texto de botones: 16 / ExtraBold. */
@@ -60,6 +70,10 @@ export const Typography = {
   pill: { fontFamily: FontFamily.bold, fontSize: 11, lineHeight: 14 },
   /** Metadatos pequeños: 11 / Regular. */
   meta: { fontFamily: FontFamily.regular, fontSize: 11, lineHeight: 14 },
+  /** Metadatos destacados: 11 / Bold. */
+  metaBold: { fontFamily: FontFamily.bold, fontSize: 11, lineHeight: 14 },
+  /** Encabezados de grupo en mayúsculas ("EN CURSO"): 11 / Bold con tracking. */
+  overline: { fontFamily: FontFamily.bold, fontSize: 11, lineHeight: 14, letterSpacing: 1 },
   /** Texto dentro de campos: 15 / Regular. */
   input: { fontFamily: FontFamily.regular, fontSize: 15, lineHeight: 19 },
   /** Etiquetas de la barra inferior: 11 / SemiBold. */

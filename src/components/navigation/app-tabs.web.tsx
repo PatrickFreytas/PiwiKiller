@@ -1,13 +1,11 @@
 import { TabList, TabSlot, TabTrigger, Tabs, type TabTriggerSlotProps } from 'expo-router/ui';
-import { SymbolView, type SymbolViewProps } from 'expo-symbols';
 import { Pressable, StyleSheet, Text } from 'react-native';
 
+import { Icon, type IconName } from '@/components/ui';
 import { useTheme } from '@/hooks/use-theme';
 import { MaxContentWidth, Spacing, Typography } from '@/theme';
 
-type WebSymbol = Extract<SymbolViewProps['name'], object>['web'];
-
-/** Barra de pestañas para web, con el diseño de la barra inferior de la guía de estilo. */
+/** Barra de pestañas para web, con el diseño de la barra inferior del Figma. */
 export default function AppTabs() {
   const theme = useTheme();
 
@@ -19,14 +17,20 @@ export default function AppTabs() {
           styles.bar,
           { backgroundColor: theme.backgroundElement, borderTopColor: theme.border },
         ]}>
-        <TabTrigger name="home" href="/" asChild>
+        <TabTrigger name="index" href="/" asChild>
           <TabButton icon="home" label="Inicio" />
         </TabTrigger>
-        <TabTrigger name="styleguide" href="/styleguide" asChild>
-          <TabButton icon="palette" label="Guía" />
+        <TabTrigger name="buscar" href="/buscar" asChild>
+          <TabButton icon="search" label="Buscar" />
         </TabTrigger>
-        <TabTrigger name="settings" href="/settings" asChild>
-          <TabButton icon="settings" label="Ajustes" />
+        <TabTrigger name="pedidos" href="/pedidos" asChild>
+          <TabButton icon="orders" label="Pedidos" />
+        </TabTrigger>
+        <TabTrigger name="puntos" href="/puntos" asChild>
+          <TabButton icon="points" label="Puntos" />
+        </TabTrigger>
+        <TabTrigger name="perfil" href="/perfil" asChild>
+          <TabButton icon="profile" label="Perfil" />
         </TabTrigger>
       </TabList>
     </Tabs>
@@ -34,12 +38,19 @@ export default function AppTabs() {
 }
 
 type TabButtonProps = TabTriggerSlotProps & {
-  icon: WebSymbol;
+  icon: IconName;
   label: string;
 };
 
 /** Pestaña: ícono de 22 px y etiqueta 11 SemiBold; coral si está activa. */
-function TabButton({ icon, label, isFocused, ref: _ref, children: _children, ...props }: TabButtonProps) {
+function TabButton({
+  icon,
+  label,
+  isFocused,
+  ref: _ref,
+  children: _children,
+  ...props
+}: TabButtonProps) {
   const theme = useTheme();
   const color = isFocused ? theme.primary : theme.textSecondary;
 
@@ -49,7 +60,7 @@ function TabButton({ icon, label, isFocused, ref: _ref, children: _children, ...
       accessibilityRole="tab"
       accessibilityState={{ selected: !!isFocused }}
       style={({ pressed }) => [styles.tab, pressed && styles.pressed]}>
-      <SymbolView name={{ web: icon }} size={22} tintColor={color} />
+      <Icon name={icon} color={color} />
       <Text style={[Typography.tab, { color }]}>{label}</Text>
     </Pressable>
   );

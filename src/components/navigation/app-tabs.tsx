@@ -6,7 +6,7 @@ import { Typography } from '@/theme';
 /**
  * Barra de pestañas nativa (Android / iOS) con los colores de la guía de estilo:
  * fondo blanco, pestaña activa en coral e inactivas en gris.
- * Cada Trigger apunta a una ruta de `src/app`.
+ * Cada Trigger apunta a una ruta de `src/app/(tabs)`.
  */
 export default function AppTabs() {
   const colors = useTheme();
@@ -32,14 +32,24 @@ export default function AppTabs() {
         <NativeTabs.Trigger.Icon sf="house.fill" md="home" />
       </NativeTabs.Trigger>
 
-      <NativeTabs.Trigger name="styleguide">
-        <NativeTabs.Trigger.Label>Guía</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="paintpalette.fill" md="palette" />
+      <NativeTabs.Trigger name="buscar">
+        <NativeTabs.Trigger.Label>Buscar</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="magnifyingglass" md="search" />
       </NativeTabs.Trigger>
 
-      <NativeTabs.Trigger name="settings">
-        <NativeTabs.Trigger.Label>Ajustes</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="gearshape.fill" md="settings" />
+      <NativeTabs.Trigger name="pedidos">
+        <NativeTabs.Trigger.Label>Pedidos</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="bag" md="shopping_bag" />
+      </NativeTabs.Trigger>
+
+      <NativeTabs.Trigger name="puntos">
+        <NativeTabs.Trigger.Label>Puntos</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="star" md="star" />
+      </NativeTabs.Trigger>
+
+      <NativeTabs.Trigger name="perfil">
+        <NativeTabs.Trigger.Label>Perfil</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="person" md="person" />
       </NativeTabs.Trigger>
     </NativeTabs>
   );

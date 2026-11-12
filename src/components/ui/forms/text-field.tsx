@@ -105,7 +105,9 @@ const styles = StyleSheet.create({
     padding: 0,
     fontFamily: Typography.input.fontFamily,
     fontSize: Typography.input.fontSize,
+    // En web quita el recuadro de foco del navegador; el foco se marca con el borde coral.
     outlineWidth: 0,
+    outlineColor: 'transparent',
   },
   disabled: {
     opacity: 0.5,

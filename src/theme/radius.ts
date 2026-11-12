@@ -12,6 +12,8 @@ export const Radius = {
   card: 20,
   /** Banners destacados. */
   banner: 22,
+  /** Paneles que suben sobre una cabecera o un mapa. */
+  sheet: 28,
   /** Chips y elementos totalmente redondeados. */
   full: 999,
 } as const;

@@ -10,6 +10,12 @@ export const Shadows = {
   field: '0px 4px 16px rgba(61, 10, 42, 0.08)',
   /** Cajas de ícono (44 px). */
   iconBox: '0px 2px 10px rgba(61, 10, 42, 0.08)',
+  /** Accesos rápidos de Inicio (Mototaxi, Envíos). */
+  tile: '0px 3px 12px rgba(61, 10, 42, 0.06)',
+  /** Marcador del repartidor en el mapa. */
+  marker: '0px 6px 20px rgba(255, 90, 121, 0.5)',
+  /** Opción activa de un selector segmentado. */
+  segment: '0px 2px 6px rgba(0, 0, 0, 0.06)',
   /** Pills blancas sobre imágenes. */
   pill: '0px 2px 8px rgba(61, 10, 42, 0.12)',
 } as const satisfies Record<string, ViewStyle['boxShadow']>;

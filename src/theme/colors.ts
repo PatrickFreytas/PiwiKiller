@@ -21,6 +21,16 @@ export const Palette = {
   bordeInput: '#E6E0EC',
   grisSuave: '#F3EFF6',
   iconoSuave: '#D5CFDC',
+  asa: '#E2DDE8',
+  pista: '#F0EBF3',
+  mapa: '#E9F1EA',
+  mapaVerde: '#CFE6D2',
+  mapaAzul: '#D7E0F0',
+  whatsapp: '#25D366',
+  yape: '#6C1D8F',
+  plin: '#16B5C8',
+  google: '#4285F4',
+  facebook: '#1877F2',
 } as const;
 
 /**
@@ -52,6 +62,9 @@ export const Colors = {
     warningText: Palette.solOscuro,
     promo: Palette.plum,
     shadow: Palette.vino,
+    handle: Palette.asa,
+    track: Palette.pista,
+    whatsapp: Palette.whatsapp,
   },
 } as const;
 
