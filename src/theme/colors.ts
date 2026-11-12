@@ -1,22 +1,59 @@
-/** Paleta de colores de la app, para modo claro y oscuro. */
+/**
+ * Paleta de marca de Tude (Figma "proyecto-ruta" · 01 Guía de estilo TUDE).
+ * Son los valores crudos; en pantallas y componentes usa `useTheme()`.
+ */
+export const Palette = {
+  coral: '#FF5A79',
+  coral50: '#FFE8EE',
+  vino: '#3D0A2A',
+  fondo: '#FFF5F7',
+  blanco: '#FFFFFF',
+  menta: '#12B886',
+  menta50: '#E3F8F0',
+  mentaOscuro: '#0A8A63',
+  sol: '#FFC530',
+  sol50: '#FFF3CC',
+  solOscuro: '#8A6400',
+  plum: '#5B2EFF',
+  texto2: '#8C869A',
+  texto3: '#4A4458',
+  borde: '#EEE9F2',
+  bordeInput: '#E6E0EC',
+  grisSuave: '#F3EFF6',
+  iconoSuave: '#D5CFDC',
+} as const;
+
+/**
+ * Colores por tema. El Figma solo define el modo claro, así que la app es siempre clara;
+ * cuando exista un diseño oscuro se agrega aquí como `dark`.
+ */
 export const Colors = {
   light: {
-    text: '#000000',
-    textSecondary: '#60646C',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    primary: '#208AEF',
-  },
-  dark: {
-    text: '#ffffff',
-    textSecondary: '#B0B4BA',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    primary: '#3C9FFE',
+    text: Palette.vino,
+    textSecondary: Palette.texto2,
+    textBody: Palette.texto3,
+    background: Palette.fondo,
+    backgroundElement: Palette.blanco,
+    backgroundSelected: Palette.coral50,
+    backgroundMuted: Palette.grisSuave,
+    primary: Palette.coral,
+    primarySoft: Palette.coral50,
+    onPrimary: Palette.blanco,
+    contrast: Palette.vino,
+    onContrast: Palette.blanco,
+    border: Palette.borde,
+    inputBorder: Palette.bordeInput,
+    iconMuted: Palette.iconoSuave,
+    success: Palette.menta,
+    successSoft: Palette.menta50,
+    successText: Palette.mentaOscuro,
+    warning: Palette.sol,
+    warningSoft: Palette.sol50,
+    warningText: Palette.solOscuro,
+    promo: Palette.plum,
+    shadow: Palette.vino,
   },
 } as const;
 
 export type ColorScheme = keyof typeof Colors;
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+export type ThemeColor = keyof typeof Colors.light;
